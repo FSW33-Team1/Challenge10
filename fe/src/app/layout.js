@@ -18,7 +18,6 @@ function RootLayout({ children }) {
           <Footer />
         </body>
       </html>
-    
   );
 }
 

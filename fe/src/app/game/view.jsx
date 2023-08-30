@@ -23,7 +23,6 @@ function Game(){
     const [isInteractive, setIsInteractive] = useState(true)
 
     const [gameStatus, setGameStatus] = useState('default')
-    const [logic, setLogic] = useState(-1)
 
     // const refId = useRef();
     // const refTotalScore = useRef();
@@ -53,8 +52,7 @@ function Game(){
     }
     
     function comChoose(){
-        // let result = getRandomArbitrary(1,4)
-        let result = 1;
+        let result = getRandomArbitrary(1,4)
         if (result == 1){
             setIsComRock(true)
         } else if (result == 2){
@@ -63,44 +61,6 @@ function Game(){
             setIsComPaper(true)
         }
     }
-
-    function changeMidText(){
-        if(gameStatus === 'default'){
-            console.log(gameStatus);
-            return styles.textVs;
-        } else if (gameStatus === 'win'){
-            console.log(gameStatus);
-            return styles.textWin;
-        } else if (gameStatus === 'lose'){
-            console.log(gameStatus);
-            return styles.textWin;
-        } else{
-            console.log(gameStatus);
-            return styles.textDraw;
-        }
-    }
-
-    class Result{
-        constructor(text, color){
-            this.text = text;
-            this.color = color;
-        }
-
-        show(){
-            midText.innerHTML = this.text;
-            midText.style.backgroundColor = this.color;
-            midText.style.color = 'white';
-            midText.style.borderRadius = '25px';
-            midText.style.transform = 'rotate(-30deg)';
-            midText.style.fontSize = '5vw';
-            midText.style.padding = '20px';
-        }
-    }
-
-    let win = new Result('YOU WIN', 'green')
-    let lose = new Result('YOU LOSE', 'red')
-    let draw = new Result('DRAW', 'orange')
-
 
     function refreshBoard(){
         setGameStatus('default');
@@ -115,10 +75,10 @@ function Game(){
         setIsComScissor(false);
     }
 
-
     async function condition(){
         if((isRock && isComRock) || (isScissor && isComScissor) || (isPaper && isComPaper)){
             setGameStatus('draw');
+
         } else if (isRock && isComPaper){
             setGameStatus('lose');
         } else if (isRock && isComScissor){
@@ -191,7 +151,21 @@ function Game(){
                 width="100"/>
             </div>
             <div className={styles.midUtilities}>
-                <h1 id='mid-text'className={changeMidText}>VS</h1>
+                {
+                    gameStatus === 'win'?
+                        <h1 className={styles.textWin}>YOU WIN</h1>
+                    :
+                        (gameStatus === 'lose'?
+                            <h1 className={styles.textLose}>YOU LOSE</h1>
+                        :
+                            (gameStatus === 'draw'?
+                                <h1 className={styles.textDraw}>DRAW</h1>
+                            :
+                                <h1 className={styles.textVs}>VS</h1>
+                            )
+                        )
+                    
+                }
                 <Image 
                 className={`${styles.img} ${styles.imgClickable} ${styles.btnRefresh}`} 
                 id='refresh' 

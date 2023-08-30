@@ -135,7 +135,6 @@
 }
 
 .textWin{
-    content: 'YOU WIN';
     font-size: 100px;
     background-color: green;
     margin-top: 200px;
@@ -149,7 +148,6 @@
 }
 
 .textLose{
-    content: 'YOU LOSE';
     font-size: 100px;
     background-color: RED;
     margin-top: 200px;
@@ -163,7 +161,6 @@
 }
 
 .textDraw{
-    content: 'DRAW';
     font-size: 100px;
     background-color: orange;
     margin-top: 200px;
