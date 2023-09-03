@@ -1,7 +1,7 @@
+//done
 import GameView from './view';
-import './game.module.css';
 
-export default function Counter() {
+export default function Game() {
   return (
       <main>
         <GameView />
