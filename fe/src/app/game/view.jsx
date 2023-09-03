@@ -1,14 +1,13 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 // import axios from "../../lib/axios";
 import Image from 'next/image';
-import gambarBatu from '../../assets/images/batu.png'
-import gambarGunting from '../../assets/images/gunting.png'
-import gambarKertas from '../../assets/images/kertas.png'
-import gambarRefresh from '../../assets/images/refresh.png'
+import gambarBatu from '../../../public/images/batu.png'
+import gambarGunting from '../../../public/images/gunting.png'
+import gambarKertas from '../../../public/images/kertas.png'
+import gambarRefresh from '../../../public/images/refresh.png'
 import styles from './game.module.css';
-import './game.module.css';
 
 
 function Game(){

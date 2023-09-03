@@ -1,3 +1,0 @@
-export const PLAYERROCK = 'PLAYERROCK';
-export const PLAYERPAPER = 'PLAYERPAPER';
-export const PLAYERSCISSOR = 'PLAYERSCISSOR';

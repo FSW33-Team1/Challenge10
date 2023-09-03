@@ -70,6 +70,7 @@
 .textPlayer{
     font-size: 3vw;
     font-weight: bold;
+    color: #9ca0d2 !important;
 }
 
 .playerRock{
@@ -125,6 +126,7 @@
 .textCom{
     font-size: 3vw;
     font-weight: bold;
+    color: #9ca0d2 !important;
 }
 
 .selected{
