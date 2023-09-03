@@ -1,6 +1,6 @@
+"use client"
 import React from 'react'
 import { Container, Row } from "@/lib/bootstrap";
-import { asset_home } from "../../../public/images";
 
 const Signup = () => {
 	return (

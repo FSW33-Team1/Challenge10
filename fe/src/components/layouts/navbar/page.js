@@ -1,8 +1,10 @@
-import React from 'react'
-// import { Link } from "react-router-dom";
+"use client"
+import React, {useEffect} from 'react'
+import { signOut, useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
-const Navbar = ({ user, logOut }) => {
-
+const Navbar = () => {
+  const {status, data} = useSession();
 	const itemLinks = [
 		{
 			name: "Home",
@@ -36,7 +38,7 @@ const Navbar = ({ user, logOut }) => {
 
 
 					</ul>
-					{user ? <span>Hello <a href="/profile">{user?.username}</a>, <a href="/login" className="nav-link" onClick={logOut}>
+					{status === 'authenticated' ? <span>Hello <a href="/profile">{data?.user?.name}</a>, <a href="/login" className="nav-link" onClick={() =>signOut()}>
 						Logout
 					</a>
 					</span> : <a href={"/register"} className='btn-regiter'>Register</a>}

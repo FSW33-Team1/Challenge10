@@ -5,9 +5,11 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
+require('dotenv').config();
+
 const app = express();
 var corsOptions = {
-  origin: "http://localhost:5173"
+  origin: process.env.FE_HOST
 };
 
 app.use(cors(corsOptions));
