@@ -12,7 +12,7 @@ const Card = ({ item }) => {
 					<div className="card-body">
 						<h5>{item.title}</h5>
 					</div>
-					<a href="/detail" className=' d-flex justify-content-center'>View Detail</a>
+					<a href="/game-detail" className=' d-flex justify-content-center'>View Detail</a>
 				</div>
 			</div>
 		</>

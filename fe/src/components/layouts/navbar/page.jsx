@@ -11,7 +11,7 @@ const Navbar = ({ user, logOut }) => {
 		},
 		{
 			name: "Games",
-			url: "/games"
+			url: "/game-list"
 		},
 	]
 
@@ -33,8 +33,6 @@ const Navbar = ({ user, logOut }) => {
 								<a className="nav-link" href={item.url}	>{item.name}</a>
 							</li>
 						))}
-
-
 
 					</ul>
 					{user ? <span>Hello <a href={"/profile"}>{user?.username}</a>, <a to="/login" className="nav-link" onClick={logOut}>

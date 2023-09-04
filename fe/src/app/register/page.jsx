@@ -1,6 +1,8 @@
+"use client";
 import React from 'react'
 import { Container, Row } from "react-bootstrap";
 import { asset_home } from "../../../public/images";
+import Image from "next/image";
 
 const Signup = () => {
 	return (
@@ -9,7 +11,7 @@ const Signup = () => {
 				<Container>
 					<Row>
 						<div className="col-md-4">
-							<img src={asset_home.imgLogin} alt="img login" className="img-fluid" />
+							<Image src={asset_home.imgLogin} alt="img login" className="img-fluid" />
 						</div>
 
 						<div className="col-md-5">

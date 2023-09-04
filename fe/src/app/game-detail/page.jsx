@@ -23,7 +23,7 @@ const Detail = () => {
 						<div className="image-cover text-center">
 							<Image src={asset_card.imgPopularGame1} alt="iamge cover detail" className='img-fluid text-center' />
 
-							<button className=' mt-3 d-flex align-items-center justify-content-center gap-1'> <span className='d-flex align-items-center'><BsFillPlayFill /></span> Play Now</button>
+							<a href={'/game'} className=' mt-3 d-flex align-items-center justify-content-center gap-1'> <span className='d-flex align-items-center'><BsFillPlayFill /></span> Play Now</a>
 						</div>
 						<div className="items-text ">
 							<div className="description">
