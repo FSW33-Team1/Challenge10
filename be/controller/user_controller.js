@@ -1,4 +1,5 @@
 const models = require("../models");
+var bcrypt = require("bcryptjs");
 module.exports = class UserController {
   //done
   async findUser(req, res) {
@@ -23,14 +24,15 @@ module.exports = class UserController {
   //done
   async registerUser(req, res, next) {
     try {
-      const { username, password } = req.body;
+      const { username, email, password } = req.body;
+      const hashedPassword = bcrypt.hashSync(password, 8); 
       const registeredUser = await models.User.findOne({ where: { username: username } });
       if (!username || !password) {
         return res.status(400).send('Username and Password required');
       } else if (registeredUser !== null) {
         res.send('Username taken!')
       } else {
-        models.User.create({ username, password: bcrypt.hashSync(password, 8) })
+        models.User.create({ username, email, hashedPassword })
           .then(() => {
             console.log('user created: ' + username)
             res.json(req.body)
